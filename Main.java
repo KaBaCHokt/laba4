@@ -55,30 +55,24 @@ class Storage<T> {
 
 public class Main {
 
+    
     public static <T> T readValueFromConsole(Scanner scanner, Class<T> type) {
-        try {
-            if (type == Integer.class) {
-                String input = scanner.nextLine().trim();
-                return input.isEmpty() ? null : type.cast(Integer.parseInt(input));
-            } else if (type == Double.class) {
-                String input = scanner.nextLine().trim();
-                return input.isEmpty() ? null : type.cast(Double.parseDouble(input));
-            } else if (type == Float.class) {
-                String input = scanner.nextLine().trim();
-                return input.isEmpty() ? null : type.cast(Float.parseFloat(input));
-            } else if (type == String.class) {
-                String input = scanner.nextLine().trim();
-                return input.isEmpty() ? null : type.cast(input);
-            } else {
-                throw new IllegalArgumentException("Неподдерживаемый тип: " + type);
-            }
-        } catch (NumberFormatException e) {
-            System.err.println("Неверный формат числа. Пожалуйста, введите корректное число.");
-            return null;
-        } catch (Exception e) {
-            System.err.println("Ошибка чтения ввода: " + e.getMessage());
-            return null;
+        if (type == Integer.class) {
+            String input = scanner.nextLine().trim();
+            return input.isEmpty() ? null : type.cast(Integer.parseInt(input));
+        } else if (type == Double.class) {
+            String input = scanner.nextLine().trim();
+            return input.isEmpty() ? null : type.cast(Double.parseDouble(input));
+        } else if (type == Float.class) {
+            String input = scanner.nextLine().trim();
+            return input.isEmpty() ? null : type.cast(Float.parseFloat(input));
+        } else if (type == String.class) {
+            String input = scanner.nextLine().trim();
+            return input.isEmpty() ? null : type.cast(input);
+        } else {
+            throw new IllegalArgumentException("Неподдерживаемый тип: " + type);
         }
+
     }
 
     public static void main(String[] args) {
