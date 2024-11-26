@@ -87,14 +87,12 @@ public class Main {
         System.out.println("          Задание 1.1");
         Box<Integer> intBox = new Box<>();
         System.out.print("Введите целое число для коробки: ");
-        try {
-            int number = Integer.parseInt(scanner.nextLine());
-            intBox.put(number);
-            System.out.println("Число " + number + " помещено в коробку.");
-            System.out.println("Значение из коробки: " + intBox.get());
-        } catch (IllegalStateException e) {
-            System.err.println(e.getMessage());
-        }
+        
+        int number = Integer.parseInt(scanner.nextLine());
+        intBox.put(number);
+        System.out.println("Число " + number + " помещено в коробку.");
+        System.out.println("Значение из коробки: " + intBox.get());
+        
 
         System.out.println("          Задание 1.2");
         System.out.print("Создаем Storage для чисел. Введите число (или оставьте пустым): ");
